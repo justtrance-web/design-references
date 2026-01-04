@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pendragon Cycle — Design Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+
+            --bg-primary: #1a1a2e;
+            --text-primary: #ffffff;
+            --bg-card: rgba(255,255,255,0.05);
+            --border: rgba(255,255,255,0.1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        .meta a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dashed currentColor;
+        }
+        
+        .meta a:hover {
+            opacity: 1;
+        }
+        
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+        
+        /* Colors */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+        }
+        
+        .color-item {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .color-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .color-item::after {
+            content: 'Скопировано!';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .color-item.copied::after {
+            opacity: 1;
+        }
+        
+        /* Fonts */
+        .fonts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .font-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+        }
+        
+        .font-name {
+            font-size: 14px;
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+        
+        .font-preview {
+            font-size: 32px;
+            font-weight: 500;
+        }
+        
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        
+        /* CSS Variables */
+        .code-block {
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, var(--color-1, #667eea) 0%, var(--color-2, #764ba2) 100%);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        
+        .cta-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .cta-desc {
+            opacity: 0.9;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: #fff;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0.5;
+            font-size: 13px;
+        }
+        
+        footer a {
+            color: inherit;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .colors-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">tech</div>
+            <h1>The Pendragon Cycle</h1>
+            <div class="meta">
+                <span>📅 2026-01-04</span>
+                <a href="https://pendragoncycle.com/" target="_blank">🌐 Сайт</a>
+                <a href="https://www.awwwards.com/sites/the-pendragon-cycle" target="_blank">🏆 Awwwards</a>
+            </div>
+        </header>
+        
+        <div class="section">
+            <div class="section-title">Цветовая палитра</div>
+            <div class="colors-grid">
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Типографика</div>
+            <div class="fonts-list">
+                <div class="font-item">
+                    <div class="font-name">Шрифты не определены</div>
+                    <div class="font-preview">Проверьте исходный сайт</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Характеристики</div>
+            <div class="tags">
+                <span class="tag">light-theme</span>
+                <span class="tag">🛠 Next.js</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">CSS Переменные</div>
+            <div class="code-block">:root {<br>
+}</div>
+        </div>
+
+        <div class="cta-section">
+            <div class="cta-title">🚀 Сделать похожий сайт</div>
+            <div class="cta-desc">Claude задаст вопросы и создаст сайт в этом стиле</div>
+            <a href="https://claude.ai/new?q=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B2%20%D1%81%D1%82%D0%B8%D0%BB%D0%B5%20%22The%20Pendragon%20Cycle%22.%0A%0A%D0%94%D0%98%D0%97%D0%90%D0%99%D0%9D-%D0%A1%D0%98%D0%A1%D0%A2%D0%95%D0%9C%D0%90%20%D0%A0%D0%95%D0%A4%D0%95%D0%A0%D0%95%D0%9D%D0%A1%D0%90%3A%0A%E2%80%A2%20%D0%A6%D0%B2%D0%B5%D1%82%D0%B0%3A%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B8%D0%B7%D0%B2%D0%BB%D0%B5%D1%87%D1%8C%0A%E2%80%A2%20%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B%3A%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%0A%E2%80%A2%20%D0%A1%D1%82%D0%B8%D0%BB%D1%8C%3A%20light-theme%0A%E2%80%A2%20%D0%A0%D0%B5%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%3A%20https%3A//pendragoncycle.com/%0A%0A%D0%97%D0%B0%D0%B4%D0%B0%D0%B9%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D0%B8%D0%B4%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%3A%0A1.%20%D0%9A%D0%B0%D0%BA%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%B5%D0%BB%D0%B0%D0%B5%D0%BC%20%28%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%B8%D0%BB%D0%B8%20%D1%80%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%29%3F%0A2.%20%D0%95%D1%81%D0%BB%D0%B8%20%D1%80%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%E2%80%94%20%D0%B4%D0%B0%D0%B9%20URL%20%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A3.%20%D0%9A%D0%B0%D0%BA%D0%B0%D1%8F%20%D0%BD%D0%B8%D1%88%D0%B0/%D0%B8%D0%BD%D0%B4%D1%83%D1%81%D1%82%D1%80%D0%B8%D1%8F%3F%0A4.%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B%20%D0%BD%D1%83%D0%B6%D0%BD%D1%8B%3F%0A5.%20%D0%95%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%20%D0%B8%20%D1%84%D0%B8%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D1%8C%3F%0A%0A%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B9%20%D0%BF%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9%20HTML%20%D1%81%D0%B0%D0%B9%D1%82%20%D1%81%3A%0A-%20%D0%A2%D0%BE%D1%87%D0%BD%D1%8B%D0%BC%D0%B8%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%D0%BC%D0%B8%20%D0%B8%20%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%B0%D0%BC%D0%B8%20%D0%B8%D0%B7%20%D1%80%D0%B5%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D0%B0%0A-%20%D0%90%D0%BD%D0%B8%D0%BC%D0%B0%D1%86%D0%B8%D1%8F%D0%BC%D0%B8%20%D0%B8%20hover-%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B0%D0%BC%D0%B8%20%D0%BA%D0%B0%D0%BA%20%D0%B2%20%D0%BE%D1%80%D0%B8%D0%B3%D0%B8%D0%BD%D0%B0%D0%BB%D0%B5%0A-%20%D0%90%D0%B4%D0%B0%D0%BF%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B9%20%D0%B2%D1%91%D1%80%D1%81%D1%82%D0%BA%D0%BE%D0%B9%0A-%20%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D1%8B%D0%BC%20%D0%BA%20%D0%B4%D0%B5%D0%BF%D0%BB%D0%BE%D1%8E%20%D0%BA%D0%BE%D0%B4%D0%BE%D0%BC" target="_blank" class="cta-button">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Начать создание
+            </a>
+        </div>
+        
+        <footer>
+            Собрано автоматически — <a href="https://github.com/Justtrance-web/artvision-data">Artvision Design References</a>
+        </footer>
+    </div>
+    
+    <script>
+        function copyColor(el, color) {
+            navigator.clipboard.writeText(color);
+            el.classList.add('copied');
+            setTimeout(() => el.classList.remove('copied'), 1000);
+        }
+    </script>
+</body>
+</html>

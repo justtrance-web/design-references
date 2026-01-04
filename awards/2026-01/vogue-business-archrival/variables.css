@@ -1,0 +1,11 @@
+:root {
+  --color-1: #4D9EFF;
+  --color-2: #D7EBFF;
+  --color-3: #76FF02;
+  --color-4: #FCFCF8;
+  --color-5: #A95FFE;
+  --color-6: #E4CEFF;
+  --font-1: "fontAlicentHightower Fallback", sans-serif;
+  --font-2: "Source Code Pro Fallback", sans-serif;
+  --font-3: "var(--font-mono)", sans-serif;
+}

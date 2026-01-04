@@ -1,9 +1,9 @@
 :root {
-  --color-primary: #202020;
-  --color-secondary: #009CDE;
-  --color-accent: #012169;
-  --color-background-alt: #003087;
-
-  --font-heading: 'Fancy Cut', sans-serif;
-  --font-body: 'Almarai', sans-serif;
+  --color-1: #202020;
+  --color-2: #009CDE;
+  --color-3: #012169;
+  --color-4: #003087;
+  --font-1: "Almarai", sans-serif;
+  --font-2: "Fancy Cut", sans-serif;
+  --font-3: "Brilliant Cut", sans-serif;
 }

@@ -14,3 +14,5 @@
 | 2026-01-02 | [sunday](/awards/2026-01/sunday/design-extract.md) | [🔗](https://www.sunday.ai/) | portfolio | light-theme, animated | `#DDBB27` `#EADCCE` `#AEC2B8` | N/A |
 | 2026-01-02 | [inversa](/awards/2026-01/inversa/design-extract.md) | [🔗](https://inversa.com/) | tech | light-theme, gradient | `#353535` `#EBFC72` `#F1664D` | N/A |
 | 2026-01-02 | [mindmarket](/awards/2026-01/mindmarket/design-extract.md) | [🔗](https://mindmarket.com/) | agency | light-theme, gradient | `#8ED462` `#368D32` `#2C2E2A` | N/A |
+| 2026-01-04 | [vogue-business-archrival](https://justtrance-web.github.io/design-references/awards/2026-01/vogue-business-archrival/index.html) | [🔗](https://www.vogue.com/article/gen-z-broke-the-marketing-funnel-part-ii-what-now) | ecommerce | light-theme, animated | `#4D9EFF` `#D7EBFF` `#76FF02` | fontAlicentHightower Fallback, Source Code Pro Fallback |
+| 2026-01-04 | [the-pendragon-cycle](https://justtrance-web.github.io/design-references/awards/2026-01/the-pendragon-cycle/index.html) | [🔗](https://pendragoncycle.com/) | tech | light-theme | N/A | N/A |

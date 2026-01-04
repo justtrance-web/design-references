@@ -4,7 +4,7 @@
   "awwwards_url": "https://www.awwwards.com/sites/find-your-love",
   "original_url": "https://www.cartier.com/en-us/loveconfigurator.html",
   "source": "awwwards",
-  "collected": "2026-01-02",
+  "collected": "2026-01-04",
   "colors": [
     "#202020",
     "#009CDE",
@@ -12,14 +12,14 @@
     "#003087"
   ],
   "fonts": [
-    "Almarai"
+    "Almarai",
+    "Fancy Cut",
+    "Brilliant Cut"
   ],
-  "technologies": [
-    "Next.js"
-  ],
+  "technologies": [],
+  "industry": "tech",
   "styles": [
-    "dark-theme",
+    "light-theme",
     "animated"
-  ],
-  "industry": "agency"
+  ]
 }
