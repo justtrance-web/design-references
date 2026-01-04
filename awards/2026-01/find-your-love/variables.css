@@ -1,0 +1,9 @@
+:root {
+  --color-primary: #202020;
+  --color-secondary: #009CDE;
+  --color-accent: #012169;
+  --color-background-alt: #003087;
+
+  --font-heading: 'Fancy Cut', sans-serif;
+  --font-body: 'Almarai', sans-serif;
+}

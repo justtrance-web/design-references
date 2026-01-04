@@ -1,0 +1,11 @@
+:root {
+  --color-primary: #353535;
+  --color-secondary: #EBFC72;
+  --color-accent: #F1664D;
+  --color-background-alt: #595A51;
+  --color-border: #14140D;
+  --color-muted: #191B13;
+
+  --font-heading: 'var(--font-f-primary)', sans-serif;
+  --font-body: 'JetBrains Mono', sans-serif;
+}

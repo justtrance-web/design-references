@@ -1,0 +1,25 @@
+{
+  "id": "find-your-love",
+  "title": "Find Your Love",
+  "awwwards_url": "https://www.awwwards.com/sites/find-your-love",
+  "original_url": "https://www.cartier.com/en-us/loveconfigurator.html",
+  "source": "awwwards",
+  "collected": "2026-01-02",
+  "colors": [
+    "#202020",
+    "#009CDE",
+    "#012169",
+    "#003087"
+  ],
+  "fonts": [
+    "Almarai"
+  ],
+  "technologies": [
+    "Next.js"
+  ],
+  "styles": [
+    "dark-theme",
+    "animated"
+  ],
+  "industry": "agency"
+}

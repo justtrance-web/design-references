@@ -1,0 +1,30 @@
+{
+  "date": "2026-01-02",
+  "count": 6,
+  "sites": [
+    {
+      "title": "find-your-love",
+      "url": "https://www.cartier.com/en-us/loveconfigurator.html"
+    },
+    {
+      "title": "glenn-catteeuw-portfolio-1",
+      "url": "https://glenncatteeuw.com/"
+    },
+    {
+      "title": "sunday",
+      "url": "https://www.sunday.ai/"
+    },
+    {
+      "title": "inversa",
+      "url": "https://inversa.com/"
+    },
+    {
+      "title": "mindmarket",
+      "url": "https://mindmarket.com/"
+    },
+    {
+      "title": "superlocal-design-festival-25",
+      "url": "https://superlocaldesign.com/"
+    }
+  ]
+}

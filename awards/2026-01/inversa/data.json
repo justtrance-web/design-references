@@ -1,0 +1,29 @@
+{
+  "id": "inversa",
+  "title": "Inversa",
+  "awwwards_url": "https://www.awwwards.com/sites/inversa",
+  "original_url": "https://inversa.com/",
+  "source": "awwwards",
+  "collected": "2026-01-02",
+  "colors": [
+    "#353535",
+    "#EBFC72",
+    "#F1664D",
+    "#595A51",
+    "#14140D",
+    "#191B13",
+    "#F4F3E8",
+    "#404040"
+  ],
+  "fonts": [],
+  "technologies": [
+    "Nuxt.js",
+    "Lenis"
+  ],
+  "styles": [
+    "light-theme",
+    "gradient",
+    "animated"
+  ],
+  "industry": "tech"
+}
