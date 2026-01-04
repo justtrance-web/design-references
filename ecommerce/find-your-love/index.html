@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Your Love — Design Profile</title>
+  <title>Find Your Love — Design Profile | Artvision</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -14,7 +14,7 @@
       --text-muted: #999999;
       --border: #e5e5e5;
       --card-bg: #f8f8f8;
-      --accent: #009CDE;
+      --accent: #202020;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,9 +27,12 @@
       background: var(--main-bg);
     }
     
+    /* ===== SIDEBAR ===== */
     .sidebar {
       position: fixed;
-      left: 0; top: 0; bottom: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
       width: 280px;
       background: var(--sidebar-bg);
       color: #fff;
@@ -77,75 +80,78 @@
       transition: all 0.2s;
     }
     
-    .sidebar-nav a:hover { color: #fff; padding-left: 8px; }
+    .sidebar-nav a:hover {
+      color: #fff;
+      padding-left: 8px;
+    }
     
     .sidebar-cta {
       margin-top: 32px;
-      padding: 20px;
-      background: linear-gradient(135deg, var(--accent), #012169);
-      border-radius: 12px;
-      text-align: center;
-    }
-    
-    .sidebar-cta-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 12px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
     
     .sidebar-cta-btn {
-      display: inline-block;
-      background: #fff;
-      color: #000;
-      padding: 10px 20px;
+      display: block;
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 14px 20px;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 13px;
       font-weight: 600;
-      transition: transform 0.2s;
+      font-size: 14px;
+      transition: transform 0.2s, opacity 0.2s;
     }
     
-    .sidebar-cta-btn:hover { transform: scale(1.05); }
+    .sidebar-cta-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
     
+    .sidebar-links {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+    }
+    
+    .sidebar-link {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    
+    .sidebar-link:hover { color: #fff; }
+    
+    /* ===== MAIN CONTENT ===== */
     .main {
       margin-left: 280px;
       padding: 48px;
       max-width: 1000px;
     }
     
-    .section { margin-bottom: 64px; }
+    .section {
+      margin-bottom: 64px;
+    }
+    
+    .section-header {
+      margin-bottom: 24px;
+    }
     
     .section-title {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
+      color: var(--text-primary);
       margin-bottom: 8px;
     }
     
     .section-description {
+      font-size: 14px;
       color: var(--text-secondary);
-      margin-bottom: 32px;
-      max-width: 600px;
     }
     
-    .subsection { margin-bottom: 40px; }
-    
-    .subsection-title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .subsection-title::before {
-      content: '';
-      width: 4px;
-      height: 20px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-    
+    /* ===== COLORS ===== */
     .color-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -162,67 +168,85 @@
     .color-card:hover { transform: translateY(-4px); }
     
     .color-preview {
-      height: 80px;
+      height: 100px;
       display: flex;
       align-items: flex-end;
       padding: 12px;
     }
     
-    .color-preview span {
+    .color-usage {
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
       font-size: 11px;
       font-weight: 500;
-      padding: 4px 8px;
-      background: rgba(255,255,255,0.9);
-      color: #000;
-      border-radius: 4px;
     }
     
     .color-info {
-      padding: 12px;
+      padding: 14px;
       background: #fff;
-      border-top: 1px solid var(--border);
     }
     
     .color-name {
       font-size: 13px;
       font-weight: 600;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
     
     .color-hex {
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
       color: var(--text-muted);
+      cursor: pointer;
     }
     
-    .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .color-hex:hover { color: var(--accent); }
     
-    .tag {
-      background: var(--card-bg);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 500;
+    /* ===== TYPOGRAPHY ===== */
+    .type-samples {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    
-    .type-samples { display: flex; flex-direction: column; gap: 16px; }
     
     .type-sample {
       padding: 24px;
       background: var(--card-bg);
       border-radius: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    }
+    
+    .type-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    
+    .type-preview {
+      margin-bottom: 16px;
     }
     
     .type-meta {
-      text-align: right;
-      font-size: 12px;
-      color: var(--text-muted);
-      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
     
+    .type-meta-item {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    
+    .type-meta-item code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(0,0,0,0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    
+    /* ===== COMPONENTS ===== */
     .component-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -235,7 +259,7 @@
       padding: 24px;
     }
     
-    .component-name {
+    .component-title {
       font-size: 14px;
       font-weight: 600;
       margin-bottom: 16px;
@@ -247,380 +271,411 @@
       background: #fff;
       border-radius: 8px;
       display: flex;
+      align-items: center;
       justify-content: center;
+      min-height: 80px;
     }
     
-    .btn-demo {
-      background: #009CDE;
-      color: #fff;
-      padding: 12px 24px;
+    .component-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      padding: 12px;
       border-radius: 8px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
+      overflow-x: auto;
+      white-space: pre;
     }
     
-    .btn-demo-outline {
-      background: transparent;
-      color: #009CDE;
-      padding: 12px 24px;
-      border-radius: 8px;
-      border: 2px solid #009CDE;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    
+    /* ===== SPACING ===== */
     .spacing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 12px;
     }
     
     .spacing-item {
-      text-align: center;
-      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
       background: var(--card-bg);
       border-radius: 8px;
     }
     
+    .spacing-visual {
+      background: var(--accent);
+      height: 24px;
+      border-radius: 4px;
+      opacity: 0.3;
+    }
+    
     .spacing-value {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    
-    .spacing-bar {
-      height: 8px;
-      background: var(--accent);
-      border-radius: 4px;
-      margin: 0 auto;
-    }
-    
-    .css-vars {
-      background: #1a1a1a;
-      color: #fff;
-      padding: 24px;
-      border-radius: 12px;
-      font-family: 'JetBrains Mono', monospace;
       font-size: 13px;
-      line-height: 1.8;
+      font-weight: 500;
+    }
+    
+    /* ===== CSS VARIABLES ===== */
+    .variables-block {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 24px;
       overflow-x: auto;
     }
     
-    .css-vars .comment { color: #6a9955; }
-    .css-vars .property { color: #9cdcfe; }
-    .css-vars .value { color: #ce9178; }
-    
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
+    .variables-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #e0e0e0;
     }
     
-    .link-card {
+    .variables-code .prop { color: #9cdcfe; }
+    .variables-code .value { color: #ce9178; }
+    .variables-code .comment { color: #6a9955; }
+    
+    /* ===== TAGS ===== */
+    .tags {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .tag {
       background: var(--card-bg);
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text-primary);
-      transition: all 0.2s;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
     }
     
-    .link-card:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-    
-    .link-icon { font-size: 20px; }
-    
+    /* ===== FOOTER ===== */
     .footer {
       margin-top: 64px;
       padding-top: 32px;
       border-top: 1px solid var(--border);
+      text-align: center;
       color: var(--text-muted);
       font-size: 13px;
-      display: flex;
-      justify-content: space-between;
     }
     
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .sidebar { display: none; }
-      .main { margin-left: 0; padding: 24px; }
+      .sidebar {
+        position: relative;
+        width: 100%;
+        padding: 24px;
+      }
+      .main {
+        margin-left: 0;
+        padding: 24px;
+      }
     }
   </style>
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <span class="sidebar-badge">Ecommerce</span>
-      <h1 class="sidebar-title">Find Your Love</h1>
-      <p class="sidebar-subtitle">Cartier Love Configurator</p>
-    </div>
-    
-    <nav class="sidebar-nav">
-      <a href="#colors">🎨 Цвета</a>
-      <a href="#typography">✏️ Типографика</a>
-      <a href="#components">🧩 Компоненты</a>
-      <a href="#spacing">📐 Отступы</a>
-      <a href="#css">💻 CSS переменные</a>
-      <a href="#links">🔗 Ссылки</a>
-    </nav>
-    
-    <div class="sidebar-cta">
-      <div class="sidebar-cta-title">Применить стиль</div>
-      <a href="https://claude.ai/new?q=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%B9%20%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D0%B2%20%D1%81%D1%82%D0%B8%D0%BB%D0%B5%20Cartier%20Find%20Your%20Love.%20%D0%A6%D0%B2%D0%B5%D1%82%D0%B0%3A%20%23202020%2C%20%23009CDE%2C%20%23012169.%20%D0%A8%D1%80%D0%B8%D1%84%D1%82%3A%20Almarai.%20%D0%A1%D1%82%D0%B8%D0%BB%D1%8C%3A%20dark%2C%20animated%2C%20luxury." class="sidebar-cta-btn" target="_blank">
-        🚀 Открыть в Claude
-      </a>
-    </div>
-  </aside>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <span class="sidebar-badge">ECOMMERCE</span>
+    <h1 class="sidebar-title">Find Your Love</h1>
+    <p class="sidebar-subtitle">Cartier Love Configurator</p>
+  </div>
   
-  <main class="main">
-    <section id="colors" class="section">
+  <nav class="sidebar-nav">
+    <a href="#colors">🎨 Цвета</a>
+    <a href="#typography">✏️ Типографика</a>
+    <a href="#components">🧩 Компоненты</a>
+    <a href="#spacing">📐 Отступы</a>
+    <a href="#variables">💻 CSS переменные</a>
+  </nav>
+  
+  <div class="sidebar-cta">
+    <a href="https://claude.ai/new?q=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%B9%20%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%B2%20%D1%81%D1%82%D0%B8%D0%BB%D0%B5%20Find%20Your%20Love.%0A%0A%D0%94%D0%98%D0%97%D0%90%D0%99%D0%9D-%D0%A1%D0%98%D0%A1%D0%A2%D0%95%D0%9C%D0%90%3A%0A-%20%D0%A6%D0%B2%D0%B5%D1%82%D0%B0%3A%20%23202020%2C%20%23009CDE%2C%20%23012169%0A-%20%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B%3A%20Almarai%2C%20Arial%0A-%20%D0%A1%D1%82%D0%B8%D0%BB%D1%8C%3A%20dark-theme%2C%20animated%2C%20luxury%0A-%20%D0%98%D0%BD%D0%B4%D1%83%D1%81%D1%82%D1%80%D0%B8%D1%8F%3A%20ecommerce%0A%0A%D0%A0%D0%95%D0%A4%D0%95%D0%A0%D0%95%D0%9D%D0%A1%3A%20https%3A//www.cartier.com/en-us/loveconfigurator.html%0A%0A%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B9%20%D1%8D%D1%82%D1%83%20%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83%20%D0%BA%20%D0%BC%D0%BE%D0%B5%D0%BC%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%D1%83.%20%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B9%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%88%D1%80%D0%B8%D1%84%D1%82%D1%8B." class="sidebar-cta-btn" target="_blank">
+      🚀 Применить в Claude
+    </a>
+    <div class="sidebar-links">
+      <a href="https://www.cartier.com/en-us/loveconfigurator.html" class="sidebar-link" target="_blank">🌐 Сайт</a>
+      <a href="https://www.awwwards.com/sites/find-your-love" class="sidebar-link" target="_blank">🏆 Awwwards</a>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+  
+  <!-- COLORS -->
+  <section class="section" id="colors">
+    <div class="section-header">
       <h2 class="section-title">Цветовая палитра</h2>
-      <p class="section-description">Основные и вспомогательные цвета, извлечённые с сайта Cartier</p>
+      <p class="section-description">Основные и дополнительные цвета, извлечённые с сайта</p>
+    </div>
+    <div class="color-grid">
       
-      <div class="subsection">
-        <h3 class="subsection-title">Основные цвета</h3>
-        <div class="color-grid">
-          <div class="color-card">
-            <div class="color-preview" style="background: #202020;"><span>#202020</span></div>
-            <div class="color-info">
-              <div class="color-name">Primary Dark</div>
-              <div class="color-hex">RGB: 32, 32, 32</div>
-            </div>
-          </div>
-          <div class="color-card">
-            <div class="color-preview" style="background: #009CDE;"><span>#009CDE</span></div>
-            <div class="color-info">
-              <div class="color-name">Accent Blue</div>
-              <div class="color-hex">RGB: 0, 156, 222</div>
-            </div>
-          </div>
-          <div class="color-card">
-            <div class="color-preview" style="background: #012169;"><span>#012169</span></div>
-            <div class="color-info">
-              <div class="color-name">Deep Blue</div>
-              <div class="color-hex">RGB: 1, 33, 105</div>
-            </div>
-          </div>
-          <div class="color-card">
-            <div class="color-preview" style="background: #C4A747;"><span>#C4A747</span></div>
-            <div class="color-info">
-              <div class="color-name">Gold Accent</div>
-              <div class="color-hex">RGB: 196, 167, 71</div>
-            </div>
-          </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #202020; color: #fff;">
+          <span class="color-usage">background</span>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Primary 1</div>
+          <div class="color-hex" data-hex="#202020">#202020</div>
         </div>
       </div>
-      
-      <div class="subsection">
-        <h3 class="subsection-title">Вспомогательные</h3>
-        <div class="color-grid">
-          <div class="color-card">
-            <div class="color-preview" style="background: #F5F5F5;"><span style="color:#000">#F5F5F5</span></div>
-            <div class="color-info">
-              <div class="color-name">Light Gray</div>
-              <div class="color-hex">Background</div>
-            </div>
-          </div>
-          <div class="color-card">
-            <div class="color-preview" style="background: #FFFFFF; border: 1px solid #eee;"><span style="color:#000">#FFFFFF</span></div>
-            <div class="color-info">
-              <div class="color-name">White</div>
-              <div class="color-hex">Cards</div>
-            </div>
-          </div>
-          <div class="color-card">
-            <div class="color-preview" style="background: #333333;"><span>#333333</span></div>
-            <div class="color-info">
-              <div class="color-name">Text Dark</div>
-              <div class="color-hex">Body text</div>
-            </div>
-          </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #009CDE; color: #fff;">
+          <span class="color-usage">accent</span>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Primary 2</div>
+          <div class="color-hex" data-hex="#009CDE">#009CDE</div>
         </div>
       </div>
-    </section>
-    
-    <section id="typography" class="section">
+      <div class="color-card">
+        <div class="color-preview" style="background: #012169; color: #fff;">
+          <span class="color-usage">secondary</span>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Primary 3</div>
+          <div class="color-hex" data-hex="#012169">#012169</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #1a1a1a; color: #fff;"></div>
+        <div class="color-info">
+          <div class="color-name">Secondary 1</div>
+          <div class="color-hex" data-hex="#1a1a1a">#1a1a1a</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #333333; color: #fff;"></div>
+        <div class="color-info">
+          <div class="color-name">Secondary 2</div>
+          <div class="color-hex" data-hex="#333333">#333333</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #666666; color: #fff;"></div>
+        <div class="color-info">
+          <div class="color-name">Secondary 3</div>
+          <div class="color-hex" data-hex="#666666">#666666</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- TYPOGRAPHY -->
+  <section class="section" id="typography">
+    <div class="section-header">
       <h2 class="section-title">Типографика</h2>
       <p class="section-description">Шрифты и размеры текста</p>
+    </div>
+    <div class="type-samples">
       
-      <div class="subsection">
-        <h3 class="subsection-title">Шрифты</h3>
-        <div class="tags">
-          <span class="tag">Almarai</span>
-          <span class="tag">Helvetica Neue</span>
-          <span class="tag">Arial</span>
+      <div class="type-sample">
+        <div class="type-label">Font Family</div>
+        <div class="type-preview" style="font-family: 'Almarai', sans-serif; font-size: 32px; font-weight: 600;">
+          Almarai
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Family: <code>Almarai</code></span>
+          <span class="type-meta-item">Weights: <code>400, 500, 700</code></span>
         </div>
       </div>
-      
-      <div class="subsection">
-        <h3 class="subsection-title">Размеры</h3>
-        <div class="type-samples">
-          <div class="type-sample">
-            <div style="font-size: 48px; font-weight: 700;">Headline</div>
-            <div class="type-meta">48px<br>Bold</div>
-          </div>
-          <div class="type-sample">
-            <div style="font-size: 32px; font-weight: 600;">Subheadline</div>
-            <div class="type-meta">32px<br>Semibold</div>
-          </div>
-          <div class="type-sample">
-            <div style="font-size: 18px;">Body Large</div>
-            <div class="type-meta">18px<br>Regular</div>
-          </div>
-          <div class="type-sample">
-            <div style="font-size: 14px; color: #666;">Caption</div>
-            <div class="type-meta">14px<br>Regular</div>
-          </div>
+      <div class="type-sample">
+        <div class="type-label">Font Family</div>
+        <div class="type-preview" style="font-family: 'Arial', sans-serif; font-size: 32px; font-weight: 600;">
+          Arial
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Family: <code>Arial</code></span>
+          <span class="type-meta-item">Weights: <code>400, 500, 700</code></span>
         </div>
       </div>
-    </section>
-    
-    <section id="components" class="section">
+      <div class="type-sample">
+        <div class="type-label">hero</div>
+        <div class="type-preview" style="font-size: 56px; font-weight: 600; line-height: 1.2;">
+          The quick brown fox
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Size: <code>56px</code></span>
+        </div>
+      </div>
+      <div class="type-sample">
+        <div class="type-label">h1</div>
+        <div class="type-preview" style="font-size: 32px; font-weight: 600; line-height: 1.2;">
+          The quick brown fox
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Size: <code>32px</code></span>
+        </div>
+      </div>
+      <div class="type-sample">
+        <div class="type-label">h2</div>
+        <div class="type-preview" style="font-size: 24px; font-weight: 600; line-height: 1.2;">
+          The quick brown fox
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Size: <code>24px</code></span>
+        </div>
+      </div>
+      <div class="type-sample">
+        <div class="type-label">body</div>
+        <div class="type-preview" style="font-size: 16px; font-weight: 600; line-height: 1.2;">
+          The quick brown fox
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Size: <code>16px</code></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- COMPONENTS -->
+  <section class="section" id="components">
+    <div class="section-header">
       <h2 class="section-title">Компоненты</h2>
-      <p class="section-description">Кнопки и UI элементы</p>
+      <p class="section-description">Кнопки, карточки и другие UI элементы</p>
+    </div>
+    <div class="component-grid">
       
-      <div class="component-grid">
-        <div class="component-card">
-          <div class="component-name">Button: Primary</div>
-          <div class="component-preview">
-            <button class="btn-demo">Configure Now</button>
-          </div>
-          <div style="font-family: monospace; font-size: 11px; color: #666;">
-            background: #009CDE;<br>
-            padding: 12px 24px;<br>
-            border-radius: 8px;
-          </div>
+      <div class="component-card">
+        <div class="component-title">Button</div>
+        <div class="component-preview">
+          <button style="background: #009CDE; color: #fff; padding: 14px 32px; border-radius: 30px; border: none; font-weight: 600;">Button</button>
         </div>
-        <div class="component-card">
-          <div class="component-name">Button: Outline</div>
-          <div class="component-preview">
-            <button class="btn-demo-outline">Learn More</button>
-          </div>
-          <div style="font-family: monospace; font-size: 11px; color: #666;">
-            border: 2px solid #009CDE;<br>
-            padding: 12px 24px;<br>
-            border-radius: 8px;
-          </div>
-        </div>
+        <div class="component-code">background: #009CDE; color: #fff; padding: 14px 32px; border-radius: 30px; border: none; font-weight: 600;</div>
       </div>
-    </section>
-    
-    <section id="spacing" class="section">
+      <div class="component-card">
+        <div class="component-title">Button</div>
+        <div class="component-preview">
+          <button style="background: transparent; color: #009CDE; border: 2px solid #009CDE; padding: 12px 28px; border-radius: 30px;">Button</button>
+        </div>
+        <div class="component-code">background: transparent; color: #009CDE; border: 2px solid #009CDE; padding: 12px 28px; border-radius: 30px;</div>
+      </div>
+      <div class="component-card">
+        <div class="component-title">Card</div>
+        <div class="component-preview">
+          <div style="background: #1a1a1a; border-radius: 16px; padding: 32px;; width: 100%;">Card content</div>
+        </div>
+        <div class="component-code">background: #1a1a1a; border-radius: 16px; padding: 32px;</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SPACING -->
+  <section class="section" id="spacing">
+    <div class="section-header">
       <h2 class="section-title">Отступы и скругления</h2>
+      <p class="section-description">Система пространства и border-radius</p>
+    </div>
+    <div class="spacing-grid">
       
-      <div class="subsection">
-        <h3 class="subsection-title">Spacing</h3>
-        <div class="spacing-grid">
-          <div class="spacing-item">
-            <div class="spacing-value">8px</div>
-            <div class="spacing-bar" style="width: 8px;"></div>
-          </div>
-          <div class="spacing-item">
-            <div class="spacing-value">16px</div>
-            <div class="spacing-bar" style="width: 16px;"></div>
-          </div>
-          <div class="spacing-item">
-            <div class="spacing-value">24px</div>
-            <div class="spacing-bar" style="width: 24px;"></div>
-          </div>
-          <div class="spacing-item">
-            <div class="spacing-value">32px</div>
-            <div class="spacing-bar" style="width: 32px;"></div>
-          </div>
-          <div class="spacing-item">
-            <div class="spacing-value">48px</div>
-            <div class="spacing-bar" style="width: 48px;"></div>
-          </div>
-          <div class="spacing-item">
-            <div class="spacing-value">64px</div>
-            <div class="spacing-bar" style="width: 64px;"></div>
-          </div>
-        </div>
+      <div class="spacing-item">
+        <div class="spacing-visual" style="width: 8px;"></div>
+        <span class="spacing-value">8px</span>
       </div>
-      
-      <div class="subsection">
-        <h3 class="subsection-title">Border Radius</h3>
-        <div class="tags">
-          <span class="tag">4px</span>
-          <span class="tag">8px</span>
-          <span class="tag">12px</span>
-          <span class="tag">16px</span>
-          <span class="tag">24px</span>
-        </div>
+      <div class="spacing-item">
+        <div class="spacing-visual" style="width: 16px;"></div>
+        <span class="spacing-value">16px</span>
       </div>
-    </section>
-    
-    <section id="css" class="section">
+      <div class="spacing-item">
+        <div class="spacing-visual" style="width: 24px;"></div>
+        <span class="spacing-value">24px</span>
+      </div>
+      <div class="spacing-item">
+        <div class="spacing-visual" style="width: 32px;"></div>
+        <span class="spacing-value">32px</span>
+      </div>
+      <div class="spacing-item">
+        <div class="spacing-visual" style="width: 48px;"></div>
+        <span class="spacing-value">48px</span>
+      </div>
+      <div class="spacing-item">
+        <div class="spacing-visual" style="width: 64px;"></div>
+        <span class="spacing-value">64px</span>
+      </div><div style="width: 100%; margin-top: 24px;"><strong>Border Radius:</strong></div>
+      <div class="spacing-item">
+        <div style="width: 40px; height: 40px; background: var(--accent); opacity: 0.3; border-radius: 30px;"></div>
+        <span class="spacing-value">30px</span>
+      </div>
+      <div class="spacing-item">
+        <div style="width: 40px; height: 40px; background: var(--accent); opacity: 0.3; border-radius: 16px;"></div>
+        <span class="spacing-value">16px</span>
+      </div>
+      <div class="spacing-item">
+        <div style="width: 40px; height: 40px; background: var(--accent); opacity: 0.3; border-radius: 8px;"></div>
+        <span class="spacing-value">8px</span>
+      </div>
+      <div class="spacing-item">
+        <div style="width: 40px; height: 40px; background: var(--accent); opacity: 0.3; border-radius: 4px;"></div>
+        <span class="spacing-value">4px</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CSS VARIABLES -->
+  <section class="section" id="variables">
+    <div class="section-header">
       <h2 class="section-title">CSS переменные</h2>
-      <p class="section-description">Готовые переменные для копирования в проект</p>
-      
-      <div class="css-vars">
-<span class="comment">/* Find Your Love Design Tokens */</span>
+      <p class="section-description">Готовые переменные для использования в проекте</p>
+    </div>
+    <div class="variables-block">
+      <pre class="variables-code"><span class="comment">/* Design System Variables */</span>
 :root {
-  <span class="property">--color-primary</span>: <span class="value">#202020</span>;
-  <span class="property">--color-accent</span>: <span class="value">#009CDE</span>;
-  <span class="property">--color-accent-dark</span>: <span class="value">#012169</span>;
-  <span class="property">--color-gold</span>: <span class="value">#C4A747</span>;
-  <span class="property">--color-bg</span>: <span class="value">#F5F5F5</span>;
-  <span class="property">--color-text</span>: <span class="value">#333333</span>;
+  <span class="comment">/* Colors */</span>
+  <span class="prop">--color-primary-1</span>: <span class="value">#202020</span>;
+  <span class="prop">--color-primary-2</span>: <span class="value">#009CDE</span>;
+  <span class="prop">--color-primary-3</span>: <span class="value">#012169</span>;
+  <span class="prop">--color-secondary-1</span>: <span class="value">#1a1a1a</span>;
+  <span class="prop">--color-secondary-2</span>: <span class="value">#333333</span>;
+  <span class="prop">--color-secondary-3</span>: <span class="value">#666666</span>;
+
+  <span class="comment">/* Typography */</span>
+  <span class="prop">--font-almarai</span>: <span class="value">'Almarai', sans-serif</span>;
+  <span class="prop">--font-arial</span>: <span class="value">'Arial', sans-serif</span>;
+
+  <span class="comment">/* Spacing */</span>
+  <span class="prop">--space-1</span>: <span class="value">8px</span>;
+  <span class="prop">--space-2</span>: <span class="value">16px</span>;
+  <span class="prop">--space-3</span>: <span class="value">24px</span>;
+  <span class="prop">--space-4</span>: <span class="value">32px</span>;
+
+  <span class="comment">/* Border Radius */</span>
+  <span class="prop">--radius-1</span>: <span class="value">30px</span>;
+  <span class="prop">--radius-2</span>: <span class="value">16px</span>;
+  <span class="prop">--radius-3</span>: <span class="value">8px</span>;
+}</pre>
+    </div>
+  </section>
   
-  <span class="property">--font-primary</span>: <span class="value">'Almarai', sans-serif</span>;
-  <span class="property">--font-size-h1</span>: <span class="value">48px</span>;
-  <span class="property">--font-size-h2</span>: <span class="value">32px</span>;
-  <span class="property">--font-size-body</span>: <span class="value">18px</span>;
-  
-  <span class="property">--spacing-sm</span>: <span class="value">8px</span>;
-  <span class="property">--spacing-md</span>: <span class="value">16px</span>;
-  <span class="property">--spacing-lg</span>: <span class="value">24px</span>;
-  <span class="property">--spacing-xl</span>: <span class="value">48px</span>;
-  
-  <span class="property">--radius-sm</span>: <span class="value">4px</span>;
-  <span class="property">--radius-md</span>: <span class="value">8px</span>;
-  <span class="property">--radius-lg</span>: <span class="value">16px</span>;
-}
-      </div>
-    </section>
-    
-    <section id="links" class="section">
-      <h2 class="section-title">Ссылки</h2>
-      
-      <div class="links-grid">
-        <a href="https://www.cartier.com/en-us/loveconfigurator.html" class="link-card" target="_blank">
-          <span class="link-icon">🌐</span>
-          <span>Оригинал сайта</span>
-        </a>
-        <a href="https://www.awwwards.com/sites/find-your-love" class="link-card" target="_blank">
-          <span class="link-icon">🏆</span>
-          <span>Awwwards</span>
-        </a>
-        <a href="https://claude.ai/new" class="link-card" target="_blank">
-          <span class="link-icon">🤖</span>
-          <span>Применить в Claude</span>
-        </a>
-      </div>
-    </section>
-    
-    <section class="section">
+  <!-- TAGS -->
+  <section class="section" id="tags">
+    <div class="section-header">
       <h2 class="section-title">Характеристики</h2>
-      <div class="tags">
-        <span class="tag">🌙 Dark theme</span>
-        <span class="tag">✨ Animated</span>
-        <span class="tag">💎 Luxury</span>
-        <span class="tag">🛒 Ecommerce</span>
-        <span class="tag">⚡ Interactive</span>
-      </div>
-    </section>
-    
-    <footer class="footer">
-      <span>Artvision Design References</span>
-      <span>Собрано 02.01.2026</span>
-    </footer>
-  </main>
+    </div>
+    <div class="tags">
+      <span class="tag">🏷️ Ecommerce</span>
+<span class="tag">🌙 Dark theme</span>
+<span class="tag">✨ Animated</span>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    Artvision Design References • Собрано 04.01.2026
+  </footer>
+  
+</main>
+
+<script>
+// Copy color on click
+document.querySelectorAll('.color-hex').forEach(el => {
+  el.addEventListener('click', () => {
+    navigator.clipboard.writeText(el.textContent);
+    el.textContent = 'Скопировано!';
+    setTimeout(() => el.textContent = el.dataset.hex, 1000);
+  });
+});
+</script>
+
 </body>
 </html>
