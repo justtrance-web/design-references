@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Love — Design Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-1: #202020;
+            --color-2: #009CDE;
+            --color-3: #012169;
+            --bg: #0a0a0a;
+            --text: #ffffff;
+            --card: rgba(255,255,255,0.05);
+            --border: rgba(255,255,255,0.1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--color-2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        
+        h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+        
+        .subtitle { color: rgba(255,255,255,0.6); font-size: 16px; }
+        
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 16px;
+        }
+        
+        .colors {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .color-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.05);
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        
+        .color-swatch {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .color-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+        }
+        
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        
+        .links { display: flex; gap: 12px; flex-wrap: wrap; }
+        
+        .link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-2);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .link:hover { text-decoration: underline; }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-2), var(--color-3));
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        
+        .cta-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--color-3);
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 16px;
+            transition: transform 0.2s;
+        }
+        
+        .cta-btn:hover { transform: scale(1.05); }
+        
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Ecommerce</span>
+            <h1>Find Your Love</h1>
+            <p class="subtitle">Cartier Love Configurator — dark theme, animated</p>
+        </header>
+        
+        <div class="section">
+            <div class="section-title">Цветовая палитра</div>
+            <div class="colors">
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #202020;"></div>
+                    <span class="color-code">#202020</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #009CDE;"></div>
+                    <span class="color-code">#009CDE</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #012169;"></div>
+                    <span class="color-code">#012169</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Типографика</div>
+            <div class="tags">
+                <span class="tag">Almarai</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Характеристики</div>
+            <div class="tags">
+                <span class="tag">🌙 Dark theme</span>
+                <span class="tag">✨ Animated</span>
+                <span class="tag">🛒 Ecommerce</span>
+                <span class="tag">💎 Luxury</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Ссылки</div>
+            <div class="links">
+                <a href="https://www.cartier.com/en-us/loveconfigurator.html" class="link" target="_blank">
+                    🌐 Оригинал сайта
+                </a>
+                <a href="https://www.awwwards.com/sites/find-your-love" class="link" target="_blank">
+                    🏆 Awwwards
+                </a>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <div class="cta-title">Применить этот стиль к своему сайту</div>
+            <p style="opacity: 0.9; font-size: 14px;">Claude применит цвета, шрифты и стиль к вашему проекту</p>
+            <a href="https://claude.ai/new?q=Создай%20дизайн%20в%20стиле%20Cartier%20Find%20Your%20Love.%20Цвета:%20%23202020,%20%23009CDE,%20%23012169.%20Шрифт:%20Almarai.%20Стиль:%20dark,%20animated,%20luxury." class="cta-btn" target="_blank">
+                🚀 Открыть в Claude
+            </a>
+        </div>
+        
+        <footer>
+            Artvision Design References • Собрано 02.01.2026
+        </footer>
+    </div>
+</body>
+</html>
