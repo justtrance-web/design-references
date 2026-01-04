@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vogue Business Archrival — Design Profile | Artvision</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sidebar-bg: #0a0a0a;
+      --main-bg: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666666;
+      --text-muted: #999999;
+      --border: #e5e5e5;
+      --card-bg: #f8f8f8;
+      --accent: #4D9EFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; line-height: 1.6; color: var(--text-primary); background: var(--main-bg); }
+    
+    .sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: 280px; background: var(--sidebar-bg); color: #fff; padding: 32px 24px; overflow-y: auto; z-index: 100; }
+    .sidebar-badge { display: inline-block; background: var(--accent); color: #1a1a1a; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+    .sidebar-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
+    .sidebar-subtitle { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .sidebar-nav { margin-top: 32px; }
+    .sidebar-nav a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; padding: 12px 0; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.2s; }
+    .sidebar-nav a:hover { color: #fff; padding-left: 8px; }
+    .sidebar-cta { margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .sidebar-cta-btn { display: block; background: var(--accent); color: #1a1a1a; text-align: center; padding: 14px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: transform 0.2s; }
+    .sidebar-cta-btn:hover { transform: translateY(-2px); }
+    .sidebar-links { margin-top: 16px; display: flex; gap: 16px; }
+    .sidebar-link { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
+    .sidebar-link:hover { color: #fff; }
+    
+    .main { margin-left: 280px; padding: 48px; max-width: 900px; }
+    .section { margin-bottom: 56px; }
+    .section-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .section-description { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; }
+    
+    .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
+    .color-card { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s; }
+    .color-card:hover { transform: translateY(-4px); }
+    .color-preview { height: 80px; }
+    .color-info { padding: 12px; background: #fff; }
+    .color-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+    .color-hex { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); cursor: pointer; }
+    .color-hex:hover { color: var(--accent); }
+    
+    .type-sample { padding: 20px; background: var(--card-bg); border-radius: 12px; margin-bottom: 12px; }
+    .type-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; }
+    .type-meta { margin-top: 12px; }
+    .type-meta-item { font-size: 12px; color: var(--text-secondary); }
+    .type-meta-item code { font-family: 'JetBrains Mono', monospace; background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px; }
+    
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { background: var(--card-bg); padding: 8px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
+    
+    .variables-block { background: #1a1a1a; border-radius: 12px; padding: 20px; overflow-x: auto; }
+    .variables-code { font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8; color: #e0e0e0; white-space: pre; }
+    .variables-code .prop { color: #9cdcfe; }
+    .variables-code .value { color: #ce9178; }
+    .variables-code .comment { color: #6a9955; }
+    
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 12px; }
+    
+    @media (max-width: 768px) {
+      .sidebar { position: relative; width: 100%; }
+      .main { margin-left: 0; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <span class="sidebar-badge">ecommerce</span>
+    <h1 class="sidebar-title">Vogue Business Archrival</h1>
+    <p class="sidebar-subtitle">Design Profile</p>
+  </div>
+  
+  <nav class="sidebar-nav">
+    <a href="#colors">🎨 Цвета</a>
+    <a href="#typography">✏️ Типографика</a>
+    <a href="#variables">💻 CSS переменные</a>
+    <a href="#tags">🏷️ Характеристики</a>
+  </nav>
+  
+  <div class="sidebar-cta">
+    <a href="https://claude.ai/new?q=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%B9%20%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D0%B2%20%D1%81%D1%82%D0%B8%D0%BB%D0%B5%20Vogue%20Business%20Archrival.%20%D0%A6%D0%B2%D0%B5%D1%82%D0%B0%3A%20%234D9EFF%2C%20%23D7EBFF%2C%20%2376FF02%2C%20%23FCFCF8.%20%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B%3A%20fontAlicentHightower%20Fallback%2C%20Source%20Code%20Pro%20Fallback.%20%D0%A1%D1%82%D0%B8%D0%BB%D1%8C%3A%20light-theme%2C%20animated%2C%20gradient." class="sidebar-cta-btn" target="_blank">🚀 Применить в Claude</a>
+    <div class="sidebar-links">
+      <a href="https://www.vogue.com/article/gen-z-broke-the-marketing-funnel-part-ii-what-now" class="sidebar-link" target="_blank">🌐 Сайт</a>
+      <a href="https://www.awwwards.com/sites/vogue-business-archrival" class="sidebar-link" target="_blank">🏆 Awwwards</a>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+  <section class="section" id="colors">
+    <h2 class="section-title">Цветовая палитра</h2>
+    <p class="section-description">Основные цвета дизайн-системы</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-preview" style="background: #4D9EFF; color: #000;"></div>
+        <div class="color-info">
+          <div class="color-name">Primary</div>
+          <div class="color-hex" data-hex="#4D9EFF">#4D9EFF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #D7EBFF; color: #000;"></div>
+        <div class="color-info">
+          <div class="color-name">Accent</div>
+          <div class="color-hex" data-hex="#D7EBFF">#D7EBFF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #76FF02; color: #000;"></div>
+        <div class="color-info">
+          <div class="color-name">Secondary</div>
+          <div class="color-hex" data-hex="#76FF02">#76FF02</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #FCFCF8; color: #000;"></div>
+        <div class="color-info">
+          <div class="color-name">Tertiary</div>
+          <div class="color-hex" data-hex="#FCFCF8">#FCFCF8</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #A95FFE; color: #000;"></div>
+        <div class="color-info">
+          <div class="color-name">Gray 1</div>
+          <div class="color-hex" data-hex="#A95FFE">#A95FFE</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-preview" style="background: #E4CEFF; color: #000;"></div>
+        <div class="color-info">
+          <div class="color-name">Gray 2</div>
+          <div class="color-hex" data-hex="#E4CEFF">#E4CEFF</div>
+        </div>
+      </div></div>
+  </section>
+  
+  <section class="section" id="typography">
+    <h2 class="section-title">Типографика</h2>
+    <p class="section-description">Шрифты проекта</p>
+    
+      <div class="type-sample">
+        <div class="type-label">Font Family</div>
+        <div class="type-preview" style="font-size: 28px; font-weight: 600;">
+          fontAlicentHightower Fallback
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Family: <code>fontAlicentHightower Fallback</code></span>
+        </div>
+      </div>
+      <div class="type-sample">
+        <div class="type-label">Font Family</div>
+        <div class="type-preview" style="font-size: 28px; font-weight: 600;">
+          Source Code Pro Fallback
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Family: <code>Source Code Pro Fallback</code></span>
+        </div>
+      </div>
+      <div class="type-sample">
+        <div class="type-label">Font Family</div>
+        <div class="type-preview" style="font-size: 28px; font-weight: 600;">
+          var(--font-mono)
+        </div>
+        <div class="type-meta">
+          <span class="type-meta-item">Family: <code>var(--font-mono)</code></span>
+        </div>
+      </div>
+  </section>
+  
+  <section class="section" id="variables">
+    <h2 class="section-title">CSS переменные</h2>
+    <p class="section-description">Готовые переменные для проекта</p>
+    <div class="variables-block"><pre class="variables-code"><span class="comment">/* Design System Variables */</span>
+:root {
+  <span class="comment">/* Colors */</span>
+  <span class="prop">--color-1</span>: <span class="value">#4D9EFF</span>;
+  <span class="prop">--color-2</span>: <span class="value">#D7EBFF</span>;
+  <span class="prop">--color-3</span>: <span class="value">#76FF02</span>;
+  <span class="prop">--color-4</span>: <span class="value">#FCFCF8</span>;
+  <span class="prop">--color-5</span>: <span class="value">#A95FFE</span>;
+
+  <span class="comment">/* Typography */</span>
+  <span class="prop">--font-fontalicenthightower-fallback</span>: <span class="value">'fontAlicentHightower Fallback', sans-serif</span>;
+  <span class="prop">--font-source-code-pro-fallback</span>: <span class="value">'Source Code Pro Fallback', sans-serif</span>;
+}</pre></div>
+  </section>
+  
+  <section class="section" id="tags">
+    <h2 class="section-title">Характеристики</h2>
+    <div class="tags"><span class="tag">🏷️ Ecommerce</span><span class="tag">☀️ Light</span><span class="tag">✨ Animated</span><span class="tag">🌈 Gradient</span></div>
+  </section>
+  
+  <footer class="footer">Artvision Design References • 2026-01-04</footer>
+</main>
+
+<script>
+document.querySelectorAll('.color-hex').forEach(el => {
+  el.addEventListener('click', () => {
+    navigator.clipboard.writeText(el.dataset.hex);
+    const orig = el.textContent;
+    el.textContent = 'Copied!';
+    setTimeout(() => el.textContent = orig, 1000);
+  });
+});
+</script>
+</body>
+</html>
